@@ -2,7 +2,7 @@
 #include <libc.h>
 
 void
-main(int argc, char *argv[])
+main(void)
 {
 	print("hello world (pid:%d)\n", getpid());
 
