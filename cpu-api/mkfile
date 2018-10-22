@@ -1,0 +1,32 @@
+</$objtype/mkfile
+
+ALL=p1 p2 p3 p4
+
+all:V:	$ALL
+
+p1:		p1.$O
+		$LD	$LDFLAGS -o p1 p1.$O
+
+p1.$O:	p1.c
+		$CC	$CFLAGS p1.c
+
+p2:		p2.$O
+		$LD	$LDFLAGS -o p2 p2.$O
+
+p2.$O:	p2.c
+		$CC	$CFLAGS p2.c
+
+p3:		p3.$O
+		$LD	$LDFLAGS -o p3 p3.$O
+
+p3.$O:	p3.c
+		$CC	$CFLAGS p3.c
+
+p4:		p4.$O
+		$LD	$LDFLAGS -o p4 p4.$O
+
+p4.$O:	p4.c
+		$CC	$CFLAGS p4.c
+
+clean:V:
+		rm *.$O $O.out
