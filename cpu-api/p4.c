@@ -12,8 +12,7 @@ main(void)
 		exits("fork failed\n");
 	else if (rc == 0) {
 		close(1);
-		/* below perm value is most likely wrong. */
-		create("./p4.out", ORDWR|OTRUNC, 644);
+		create("./p4.out", ORDWR|OTRUNC, 0644);
 		print("hello. i am child (pid:%d)\n", getpid());
 		execl("/bin/wc", "wc", "p4.c", nil );
 		print("you shouldn't see this...");
