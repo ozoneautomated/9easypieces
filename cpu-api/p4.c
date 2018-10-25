@@ -8,11 +8,13 @@ main(void)
 
 	int rc = rfork(RFPROC);
 
-	if (rc < 0)
-		exits("fork failed\n");
+	if (rc < 0) {
+		fprint(2, "fork failed\n");
+		exits(0);
+	}
 	else if (rc == 0) {
 		close(1);
-		create("./p4.out", ORDWR|OTRUNC, 0644);
+		create("./p4_out", ORDWR|OTRUNC, 0644);
 		print("hello. i am child (pid:%d)\n", getpid());
 		execl("/bin/wc", "wc", "p4.c", nil );
 		print("you shouldn't see this...");
