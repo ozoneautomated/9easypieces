@@ -1,0 +1,26 @@
+</$objtype/mkfile
+
+ALL=cpu io mem
+
+all:V:	$ALL
+
+cpu:	cpu.$O
+		$LD	$LDFLAGS -o cpu cpu.$O
+
+cpu.$O:	cpu.c
+		$CC	$CFLAGS cpu.c
+
+io:		io.$O
+		$LD	$LDFLAGS -o io io.$O
+
+io.$O:	io.c
+		$CC	$CFLAGS io.c
+
+mem:		mem.$O
+		$LD	$LDFLAGS -o mem mem.$O
+
+mem.$O:	mem.c
+		$CC	$CFLAGS mem.c
+
+clean:V:
+		rm *.$O
