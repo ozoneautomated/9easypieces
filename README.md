@@ -1,3 +1,3 @@
 # 9easypieces
-Examples from "Operating Systems: Three Easy Pieces" ported to plan 9front
+Examples from "Operating Systems: Three Easy Pieces" ported to plan 9front.<br>
 A wip...
